@@ -10,7 +10,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const PORT = process.env.PORT || 8000;
-connectMongoDB(process.env.MONGO_URL);
+connectMongoDB('mongodb://127.0.0.1:27017/project-api');
 
 const app = express();
 
