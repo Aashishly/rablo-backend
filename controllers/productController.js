@@ -4,7 +4,7 @@ const Product = require('../models/Product');
 const addProduct = async (req, res) => {
   try {
     const product = new Product(req.body);
-    await product.save();
+    await product.save({ maxTimeMS: 20000 });
     res.status(200).json(product);
   } catch (error) {
     res.status(400).json({ error: error.message });
